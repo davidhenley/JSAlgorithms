@@ -6,14 +6,14 @@ String Reversal
 
 Option 1:
 ```
-const reverseString = str => (
+function reverseString(str) (
   Array.from(str).reverse().join('')
 )
 ```
 
 Option 2:
 ```
-const reverseString = str => (
+function reverseString(str) (
   Array.from(str).reduce((a, b) => b + a, '')
 )
 ```
@@ -55,3 +55,35 @@ const reverseInt = num => {
 
 String Max Characters
 ---
+
+```
+const maxChars = str => {
+  const chars = {}
+  let max = 0, maxChar = ''
+
+  for (let char of str) {
+    chars[char] = chars[char] + 1 || 1
+    if (chars[char] > max) {
+      max = chars[char]
+      maxChar = char
+    }
+  }
+
+  return maxChar
+}
+```
+
+FizzBuzz
+---
+```
+const fizzBuzz = num => {
+  if (num < 1) return
+
+  for (let i = 1; i <= num; i++) {
+    let str = ''
+    if (i % 3 === 0) str += 'fizz'
+    if (i % 5 === 0) str += 'buzz'
+    console.log(str || i)
+  }
+}
+```
